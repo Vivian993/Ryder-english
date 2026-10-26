@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高中英文單字隨身卡 - 全單元完整收錄版</title>
+    <title>高中英文單字隨身卡 - 全單元完整收錄與中英查詢版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -60,7 +60,7 @@
         <!-- 搜尋與快速操作列 -->
         <div class="w-full mb-5 flex gap-3">
             <div class="relative flex-1">
-                <input type="text" id="search-input" placeholder="🔍 輸入英文單字或中文..." oninput="handleSearch(this.value)" class="w-full px-5 py-3.5 bg-white border-2 border-indigo-100 rounded-2xl text-base font-medium shadow-sm focus:outline-none focus:border-indigo-500 transition">
+                <input type="text" id="search-input" placeholder="🔍 輸入英文單字或中文含義查詢..." oninput="handleSearch(this.value)" class="w-full px-5 py-3.5 bg-white border-2 border-indigo-100 rounded-2xl text-base font-medium shadow-sm focus:outline-none focus:border-indigo-500 transition">
             </div>
             <button onclick="toggleAutoPlay()" id="autoplay-btn" class="bg-white border-2 border-indigo-100 text-indigo-700 px-4 py-3.5 rounded-2xl font-bold shadow-sm hover:bg-indigo-50 transition flex items-center gap-1 shrink-0" title="自動循環朗讀">
                 <span>▶ 循環</span>
@@ -170,7 +170,7 @@
 
     <!-- 底部版權 -->
     <footer class="text-center py-4 text-xs font-medium text-slate-400">
-        高中英文核心單字隨身卡 (全單元完整收錄版)
+        高中英文核心單字隨身卡 (全單元完整收錄與中英查詢版)
     </footer>
 
     <script>
@@ -207,14 +207,28 @@
             { unit: "Unit 10 線上訂房", word: "guarantee", pos: "v.", phonetic: "[͵gærən`ti]", meaning: "保證", sentenceEn: "Labels with MIT (Made in Taiwan) on them guarantee high quality and great service.", sentenceZh: "(標牌上寫著臺灣製造保證高品質及良好服務。)" },
             { unit: "Unit 10 線上訂房", word: "value", pos: "n.", phonetic: "[`vælju]", meaning: "價格；價值", sentenceEn: "The antique vases in the museum have a high value because they were treasures belonging to the royal family.", sentenceZh: "(這間博物館內的古董花瓶有著很高的價值，因為它們以前是屬於王室家族的寶物。)" },
             { unit: "Unit 10 線上訂房", word: "upgrade", pos: "v.", phonetic: "[`ʌp͵ɡred]", meaning: "升級", sentenceEn: "I paid $100 to upgrade my music app so that I can download more songs.", sentenceZh: "(為了可以下載更多的歌曲，我付了一百元升級我的音樂應用程式。)" },
+            { unit: "Unit 10 線上訂房", word: "guest", pos: "n.", phonetic: "[gɛst]", meaning: "旅客；客人", sentenceEn: "Sara invited fifteen guests to her birthday party.", sentenceZh: "(Sara 邀請了十五位客人參加她的生日派對。)" },
+            { unit: "Unit 10 線上訂房", word: "type", pos: "n.", phonetic: "[taɪp]", meaning: "類型；種類", sentenceEn: "Iris is not my type of girl; I like girls with curly hair.", sentenceZh: "(Iris 不是我喜歡女生的類型；我喜歡捲髮的女生。)" },
+            { unit: "Unit 10 線上訂房", word: "standard", pos: "adj.", phonetic: "[`stændɚd]", meaning: "標準的", sentenceEn: "The beds sold in the furniture store are standard size.", sentenceZh: "(這間傢俱店賣的床都是標準尺寸。)" },
+            { unit: "Unit 10 線上訂房", word: "search", pos: "v.", phonetic: "[sɝtʃ]", meaning: "尋找；搜索", sentenceEn: "Lily spent the whole day in the department store searching for the perfect dress.", sentenceZh: "(Lily 在百貨公司花了一整天尋找她要穿去她朋友婚禮的完美洋裝。)" },
+            { unit: "Unit 10 線上訂房", word: "rating", pos: "n.", phonetic: "[`retɪŋ]", meaning: "評價", sentenceEn: "The little restaurant on the corner of the street has a one-star rating by Michelin.", sentenceZh: "(街角的小餐廳擁有米其林一顆星評價。)" },
+            { unit: "Unit 10 線上訂房", word: "excellent", pos: "adj.", phonetic: "[`ɛkslənt]", meaning: "極好的；傑出的", sentenceEn: "The beach in Kenting is an excellent location for water sports.", sentenceZh: "(墾丁的海灘是水上運動極好的地點。)" },
 
             // Unit 11 飯店住宿
+            { unit: "Unit 11 飯店住宿", word: "belong", pos: "v.", phonetic: "[bə`lɔŋ]", meaning: "屬於", sentenceEn: "This book belongs to the school library.", sentenceZh: "(這本書屬於學校圖書館。)" },
             { unit: "Unit 11 飯店住宿", word: "disturb", pos: "v.", phonetic: "[dɪs`tɝb]", meaning: "打擾", sentenceEn: "Please do not disturb the guests who are resting in their rooms.", sentenceZh: "(請不要打擾正在房間休息的客人。)" },
             { unit: "Unit 11 飯店住宿", word: "expect", pos: "v.", phonetic: "[ɪk`spɛkt]", meaning: "預期；期待；期望", sentenceEn: "We expect to arrive at the hotel before dark.", sentenceZh: "(我們期望天黑前抵達飯店。)" },
             { unit: "Unit 11 飯店住宿", word: "inform", pos: "v.", phonetic: "[ɪn`fɔrm]", meaning: "告知", sentenceEn: "The hotel staff will inform you when your room is ready.", sentenceZh: "(當房間準備好時，飯店員工會告知您。)" },
             { unit: "Unit 11 飯店住宿", word: "store", pos: "v.", phonetic: "[stɔr]", meaning: "存放；儲存", sentenceEn: "You can store your luggage at the front desk after checking out.", sentenceZh: "(退房後您可以將行李寄放在櫃檯。)" },
             { unit: "Unit 11 飯店住宿", word: "damage", pos: "n.", phonetic: "[`dæmɪdʒ]", meaning: "損傷；毀損", sentenceEn: "Guests will be charged for any damage to the room facilities.", sentenceZh: "(房客若損壞房間設施將被索賠。)" },
             { unit: "Unit 11 飯店住宿", word: "reputation", pos: "n.", phonetic: "[͵rɛpjə`teʃən]", meaning: "名聲；名譽；聲譽", sentenceEn: "The luxury hotel has built a great reputation for its excellent service.", sentenceZh: "(這家豪華飯店以其優質的服務建立了極佳的名聲。)" },
+            { unit: "Unit 11 飯店住宿", word: "average", pos: "n.", phonetic: "[`ævərɪdʒ]", meaning: "平均；平均數", sentenceEn: "The average temperature in summer is very high in Taiwan.", sentenceZh: "(臺灣夏天的平均溫度非常高。)" },
+            { unit: "Unit 11 飯店住宿", word: "performance", pos: "n.", phonetic: "[pɚ`fɔrməns]", meaning: "表現；表演", sentenceEn: "The student's academic performance has improved significantly.", sentenceZh: "(這位學生的學業表現顯著進步。)" },
+            { unit: "Unit 11 飯店住宿", word: "improve", pos: "v.", phonetic: "[ɪm`pruv]", meaning: "改進；增進；提升", sentenceEn: "Reading books can help improve your vocabulary.", sentenceZh: "(閱讀書籍有助於增進你的字彙量。)" },
+            { unit: "Unit 11 飯店住宿", word: "professional", pos: "adj.", phonetic: "[prə`fɛʃənəl]", meaning: "專業的", sentenceEn: "She received professional training in cooking.", sentenceZh: "(她接受過專業的烹飪訓練。)" },
+            { unit: "Unit 11 飯店住宿", word: "attitude", pos: "n.", phonetic: "[`ætətjud]", meaning: "態度；想法", sentenceEn: "A positive attitude is crucial to success.", sentenceZh: "(積極的態度對成功至關重要。)" },
+            { unit: "Unit 11 飯店住宿", word: "quality", pos: "n.", phonetic: "[`kwɑləti]", meaning: "品質；特質", sentenceEn: "This store is known for selling products of high quality.", sentenceZh: "(這家店以販售高品質產品聞名。)" },
+            { unit: "Unit 11 飯店住宿", word: "reward", pos: "n.", phonetic: "[rɪ`wɔrd]", meaning: "獎品；獎勵；報答", sentenceEn: "Hard work brings great rewards in the end.", sentenceZh: "(努力工作最終會帶來豐厚的獎勵。)" },
 
             // Unit 12 租屋
             { unit: "Unit 12 租屋", word: "afford", pos: "v.", phonetic: "[ə`fɔrd]", meaning: "付得起", sentenceEn: "High Speed Rail tickets are too expensive. I can only afford ordinary train tickets.", sentenceZh: "(高鐵票太貴了。我只能付得起普通火車票。)" },
@@ -302,7 +316,7 @@
             { unit: "Unit 16 權重", word: "qualified", pos: "adj.", phonetic: "[`kwɑlə͵faɪd]", meaning: "有資格的；合格的", sentenceEn: "We need a qualified lifeguard on duty when the swimming pool is open.", sentenceZh: "(當游泳池開放時，我們需要一位合格的救生員值勤。)" },
             { unit: "Unit 16 權重", word: "related", pos: "adj.", phonetic: "[rɪ`letɪd]", meaning: "相關的；與⋯⋯有關的", sentenceEn: "Josh's poor performance in school is related to his poor study habits.", sentenceZh: "(Josh 在校表現不佳與他不好的讀書習慣有關。)" },
             { unit: "Unit 16 權重", word: "throughout", pos: "prep.", phonetic: "[θru`aʊt]", meaning: "遍及；遍及全國", sentenceEn: "Wi-Fi is accessible throughout the country.", sentenceZh: "(可使用的無線網路遍及全國。)" },
-            { unit: "Unit 16 權重", word: "especially", pos: "adv.", phonetic: "[ɪ`spɛʃəli]", meaning: "尤其是；特別是", sentenceEn: "I like to read novels, especially sci-fi ones.", sentenceZh: "(我喜歡閱讀小說，尤其是科幻小說。)" },
+            { unit: "Unit 16 權重", word: "especially", pos: "adv.", phonetic: "[`spɛʃəli]", meaning: "尤其是；特別是", sentenceEn: "I like to read novels, especially sci-fi ones.", sentenceZh: "(我喜歡閱讀小說，尤其是科幻小說。)" },
             { unit: "Unit 16 權重", word: "encounter", pos: "v.", phonetic: "[ɪn`kaʊntɚ]", meaning: "遇到；遭遇", sentenceEn: "Whenever I encounter unknown vocabulary, I look it up in the dictionary.", sentenceZh: "(每當我遇到不知道的字詞時，我會查閱字典。)" },
             { unit: "Unit 16 權重", word: "error", pos: "n.", phonetic: "[`ɛrɚ]", meaning: "錯誤；差錯", sentenceEn: "I have to rewrite my assignment because there were too many errors.", sentenceZh: "(我必須重寫作業，因為有太多的錯誤。)" },
             { unit: "Unit 16 權重", word: "property", pos: "n.", phonetic: "[`prɑpɚti]", meaning: "房產；所有物", sentenceEn: "Classroom chairs and desks are all school property.", sentenceZh: "(教室的椅子及桌子全都是學校的資產。)" },
@@ -380,6 +394,60 @@
             { unit: "Unit 22 英文選修課(二)", word: "strategy", pos: "n.", phonetic: "[`strætədʒi]", meaning: "策略；戰略", sentenceEn: "The strategies that the coach had taught the basketball team helped them to win the game.", sentenceZh: "(教練教導籃球隊的策略幫助他們贏得比賽。)" },
             { unit: "Unit 22 英文選修課(二)", word: "discuss", pos: "v.", phonetic: "[dɪ`skʌs]", meaning: "訂議；商量", sentenceEn: "The teacher gave the students some time to discuss the answer together.", sentenceZh: "(老師給學生一些時間一起討論答案。)" },
 
+            // Unit 23 自我介紹
+            { unit: "Unit 23 自我介紹", word: "election", pos: "n.", phonetic: "[ɪ`lɛkʃən]", meaning: "選舉", sentenceEn: "The presidential election is held every four years.", sentenceZh: "(總統選舉每四年舉行一次。)" },
+            { unit: "Unit 23 自我介紹", word: "candidate", pos: "n.", phonetic: "[`kændɪdɪt]", meaning: "候選人", sentenceEn: "Every candidate gave his or her personal opinion about education.", sentenceZh: "(每位候選人發表了他們對教育的個人意見。)" },
+            { unit: "Unit 23 自我介紹", word: "rely", pos: "v.", phonetic: "[rɪ`laɪ]", meaning: "信賴；依賴", sentenceEn: "I can always rely on my brother for help.", sentenceZh: "(我總是依賴哥哥幫忙。)" },
+            { unit: "Unit 23 自我介紹", word: "communication", pos: "n.", phonetic: "[kə͵mjunə`keʃən]", meaning: "溝通；通訊", sentenceEn: "Modern technology has given people better ways of communication.", sentenceZh: "(現代科技給了人們更好的溝通方式。)" },
+            { unit: "Unit 23 自我介紹", word: "passionate", pos: "adj.", phonetic: "[`pæʃənət]", meaning: "熱烈的；熱情的", sentenceEn: "Laura is passionate about music. She dreams about becoming the most famous musician in the world.", sentenceZh: "(Laura 熱愛音樂。她夢想成為世界上最知名的音樂家。)" },
+            { unit: "Unit 23 自我介紹", word: "clever", pos: "adj.", phonetic: "[`klɛvɚ]", meaning: "聰明的", sentenceEn: "It is clever of you to prepare extra pens when taking a test.", sentenceZh: "(你真聰明，考試時準備額外的筆。)" },
+            { unit: "Unit 23 自我介紹", word: "overcome", pos: "v.", phonetic: "[͵ovɚ`kʌm]", meaning: "克服；征服", sentenceEn: "Although Vivian is fully prepared for the show, she is still overcoming her stage fright.", sentenceZh: "(雖然 Vivian 為展做足充分的準備，她仍在克服怯場。)" },
+
+            // Unit 24 認識朋友
+            { unit: "Unit 24 認識朋友", word: "apologize", pos: "v.", phonetic: "[ə`pɑlə͵dʒaɪz]", meaning: "道歉；認錯", sentenceEn: "Jim apologized to George for breaking his mug.", sentenceZh: "(Jim 為打破 George 的馬克杯向他道歉。)" },
+            { unit: "Unit 24 認識朋友", word: "forgive", pos: "v.", phonetic: "[fɚ`gɪv]", meaning: "原諒", sentenceEn: "If you lie to me one more time, I won't forgive you.", sentenceZh: "(如果你再騙我一次，我就不原諒你。)" },
+            { unit: "Unit 24 認識朋友", word: "affect", pos: "v.", phonetic: "[ə`fɛkt]", meaning: "影響", sentenceEn: "Staying up late at night may affect your learning in school the next day.", sentenceZh: "(晚上熬夜可能會影響你在學校的學習。)" },
+            { unit: "Unit 24 認識朋友", word: "positive", pos: "adj.", phonetic: "[`pɑzətɪv]", meaning: "正面的", sentenceEn: "I like reading Gina's blog because she is always posting positive comments.", sentenceZh: "(我喜歡閱讀 Gina 的部落格，因為她總是張貼正面的評論。)" },
+            { unit: "Unit 24 認識朋友", word: "stress", pos: "n.", phonetic: "[strɛs]", meaning: "壓力；緊張", sentenceEn: "Exercising is a good way to relieve stress.", sentenceZh: "(運動是個很好的舒壓方式。)" },
+            { unit: "Unit 24 認識朋友", word: "solution", pos: "n.", phonetic: "[sə`luʃən]", meaning: "解決方法", sentenceEn: "Before we continue with the experiment, let's find a solution to correct our mistakes.", sentenceZh: "(在我我們繼續實驗前，讓我們找出改正錯誤的解決方法。)" },
+            { unit: "Unit 24 認識朋友", word: "jealous", pos: "adj.", phonetic: "[`dʒɛləs]", meaning: "嫉妒的；羨慕的", sentenceEn: "Mark is saying rude things to Becky because he is jealous of her.", sentenceZh: "(Mark 對 Becky 說無禮的話是因為他嫉妒她。)" },
+
+            // Unit 25 學校社團
+            { unit: "Unit 25 學校社團", word: "consist", pos: "v.", phonetic: "[kən`sɪst]", meaning: "由⋯⋯組成", sentenceEn: "Although this small company consists of only ten members, it is very efficient.", sentenceZh: "(雖然這間小公司只由十位員工組成，它非常有效率。)" },
+            { unit: "Unit 25 學校社團", word: "instrument", pos: "n.", phonetic: "[`ɪnstrəmənt]", meaning: "樂器", sentenceEn: "Some children in Taiwan usually learn to play instruments at an early age.", sentenceZh: "(臺灣有些小孩通常在幼年時學習演奏樂器。)" },
+            { unit: "Unit 25 學校社團", word: "furthermore", pos: "adv.", phonetic: "[`fɝðɚ͵mɔr]", meaning: "此外；而且", sentenceEn: "Janice won the award for 'most improved player.' Furthermore, she got a prize of $1000.", sentenceZh: "(Janice 贏得「最佳進步球員」的獎項。此外，她得到一千元的獎賞。)" },
+            { unit: "Unit 25 學校社團", word: "unite", pos: "v.", phonetic: "[ju`naɪt]", meaning: "融合；聯結", sentenceEn: "We must unite to achieve more.", sentenceZh: "(為了成就更多，我們必須團結。)" },
+            { unit: "Unit 25 學校社團", word: "concert", pos: "n.", phonetic: "[`kɑnsɚt]", meaning: "音樂會；演唱會", sentenceEn: "My favorite band is having a concert this week. I am looking forward to it.", sentenceZh: "(我最愛的樂團這周要舉辦演唱會。我真期待。)" },
+            { unit: "Unit 25 學校社團", word: "entrance", pos: "n.", phonetic: "[`ɛntrəns]", meaning: "門口；入口", sentenceEn: "Don't park your motorcycle at the entrance of the store.", sentenceZh: "(請勿在店門口停放您的機車。)" },
+            { unit: "Unit 25 學校社團", word: "hesitate", pos: "v.", phonetic: "[`hɛzə͵tet]", meaning: "猶豫", sentenceEn: "I never hesitate to ask questions in class.", sentenceZh: "(我從不猶豫在上課時發問。)" },
+
+            // Unit 26 學校競賽
+            { unit: "Unit 26 學校競賽", word: "notice", pos: "n.", phonetic: "[`notɪs]", meaning: "公告；通知", sentenceEn: "Please read the notice on the board carefully.", sentenceZh: "(請仔細閱讀公佈欄上的公告。)" },
+            { unit: "Unit 26 學校競賽", word: "demand", pos: "v.", phonetic: "[dɪ`mænd]", meaning: "要求；請求", sentenceEn: "The customer demanded to speak to the manager.", sentenceZh: "(顧客要求與經理談話。)" },
+            { unit: "Unit 26 學校競賽", word: "spirit", pos: "n.", phonetic: "[`spɪrɪt]", meaning: "精神；心靈", sentenceEn: "Team spirit is important in sports competitions.", sentenceZh: "(團隊精神在運動比賽中很重要。)" },
+            { unit: "Unit 26 學校競賽", word: "energy", pos: "n.", phonetic: "[`ɛnɚdʒi]", meaning: "精力；活力", sentenceEn: "Children have so much energy and love to run around.", sentenceZh: "(小孩有非常多精力，喜歡到處跑。)" },
+            { unit: "Unit 26 學校競賽", word: "partner", pos: "n.", phonetic: "[`pɑrtnɚ]", meaning: "夥伴；搭檔", sentenceEn: "She worked with her partner to complete the project.", sentenceZh: "(她和她的搭檔一起完成這個專案。)" },
+            { unit: "Unit 26 學校競賽", word: "role", pos: "n.", phonetic: "[rol]", meaning: "角色", sentenceEn: "Everyone plays an important role in the family.", sentenceZh: "(每個人在家庭中都扮演重要的角色。)" },
+            { unit: "Unit 26 學校競賽", word: "intense", pos: "adj.", phonetic: "[ɪn`tɛns]", meaning: "劇烈的；強烈的", sentenceEn: "The competition between the two teams was intense.", sentenceZh: "(兩支隊伍之間的競爭非常激烈。)" },
+
+            // Unit 27 電影
+            { unit: "Unit 27 電影", word: "religious", pos: "adj.", phonetic: "[rɪ`lɪdʒəs]", meaning: "宗教的；虔誠的", sentenceEn: "The old temple has a long religious history.", sentenceZh: "(這座古老的廟宇有著悠久的宗教歷史。)" },
+            { unit: "Unit 27 電影", word: "effect", pos: "n.", phonetic: "[ɪ`fɛkt]", meaning: "效果；作用", sentenceEn: "The special effects in the movie are amazing.", sentenceZh: "(這部電影的特效非常驚人。)" },
+            { unit: "Unit 27 電影", word: "image", pos: "n.", phonetic: "[`ɪmɪdʒ]", meaning: "影像；形象", sentenceEn: "The company wants to improve its public image.", sentenceZh: "(這家公司想要改善其公眾形象。)" },
+            { unit: "Unit 27 電影", word: "exist", pos: "v.", phonetic: "[ɪg`zɪst]", meaning: "存在；生存", sentenceEn: "Scientists are searching for life that might exist on other planets.", sentenceZh: "(科學家正在尋找可能存在於其他星球上的生命。)" },
+            { unit: "Unit 27 電影", word: "resist", pos: "v.", phonetic: "[rɪ`zɪst]", meaning: "抗拒；抵抗", sentenceEn: "It's hard to resist eating delicious desserts.", sentenceZh: "(很難抗拒不吃美味的甜點。)" },
+            { unit: "Unit 27 電影", word: "prohibit", pos: "v.", phonetic: "[prə`hɪbɪt]", meaning: "禁止；阻止", sentenceEn: "The law prohibits smoking in public places.", sentenceZh: "(法律禁止在公眾場所吸菸。)" },
+            { unit: "Unit 27 電影", word: "record", pos: "v.", phonetic: "[`rɛkɚd]", meaning: "錄影；錄製", sentenceEn: "He recorded his daily life with a camera.", sentenceZh: "(他用相機記錄他的日常生活。)" },
+            { unit: "Unit 27 電影", word: "distract", pos: "v.", phonetic: "[dɪ`strækt]", meaning: "干擾；使分心", sentenceEn: "Don't let noise distract you from your work.", sentenceZh: "(不要讓噪音使你從工作中分心。)" },
+
+            // Unit 28 競技比賽
+            { unit: "Unit 28 競技比賽", word: "defense", pos: "n.", phonetic: "[dɪ`fɛns]", meaning: "防守；防衛", sentenceEn: "A good defense is important in basketball games.", sentenceZh: "(好的防守在籃球比賽中很重要。)" },
+            { unit: "Unit 28 競技比賽", word: "meaningful", pos: "adj.", phonetic: "[`minɪŋfəl]", meaning: "富有意義的", sentenceEn: "Doing volunteer work is a meaningful experience.", sentenceZh: "(做志工是一次有意義的經驗。)" },
+            { unit: "Unit 28 競技比賽", word: "graduate", pos: "v.", phonetic: "[`grædʒuɪt]", meaning: "畢業", sentenceEn: "She will graduate from college next year.", sentenceZh: "(她明年將從大學畢業。)" },
+            { unit: "Unit 28 競技比賽", word: "captain", pos: "n.", phonetic: "[`kæptən]", meaning: "隊長；船長", sentenceEn: "He was chosen as the captain of the soccer team.", sentenceZh: "(他被選為足球隊隊長。)" },
+            { unit: "Unit 28 競技比賽", word: "independent", pos: "adj.", phonetic: "[͵ɪndɪ`pɛndənt]", meaning: "獨立的", sentenceEn: "College students should become financially independent.", sentenceZh: "(大學生應該要經濟獨立。)" },
+            { unit: "Unit 28 競技比賽", word: "miracle", pos: "n.", phonetic: "[`mɪrəkəl]", meaning: "奇蹟", sentenceEn: "Winning the game in the final seconds felt like a miracle.", sentenceZh: "(在最後幾秒鐘贏得比賽感覺像個奇蹟。)" },
+
             // Unit 29 展覽
             { unit: "Unit 29 展覽", word: "origin", pos: "n.", phonetic: "[`ɔrədʒɪn]", meaning: "起源", sentenceEn: "The origin of the festival dates back to ancient times.", sentenceZh: "(這個節日的起源可以追溯到古代。)" },
             { unit: "Unit 29 展覽", word: "evolution", pos: "n.", phonetic: "[͵ɛvə`luʃən]", meaning: "進化；演化", sentenceEn: "The evolution of technology has changed our daily lives.", sentenceZh: "(科技的演化改變了我們的日常生活。)" },
@@ -393,7 +461,7 @@
             { unit: "Unit 29 展覽", word: "absorb", pos: "v.", phonetic: "[əb`sɔrb]", meaning: "吸收；吸取", sentenceEn: "Plants absorb water and nutrients through their roots.", sentenceZh: "(植物透過根部吸收水分和養分。)" },
             { unit: "Unit 29 展覽", word: "virtual", pos: "adj.", phonetic: "[`vɝtʃʊəl]", meaning: "虛擬的；實質上的", sentenceEn: "Students can take virtual tours of museums online.", sentenceZh: "(學生可以在線上進行博物館的虛擬參觀。)" },
             { unit: "Unit 29 展覽", word: "feature", pos: "v.", phonetic: "[`fiʧɚ]", meaning: "以⋯⋯為特色", sentenceEn: "The new museum features artwork from local artists.", sentenceZh: "(這座新博物館以當地藝術家的藝術品為特色。)" },
-            { unit: "Unit 29 展覽", word: "digital", pos: "n.", phonetic: "[`dɪdʒɪtəl]", meaning: "數位的", sentenceEn: "We live in a digital age where information is shared instantly.", sentenceZh: "(我們生活在一個資訊即時分享的數位時代。)" },
+            { unit: "Unit 29 展覽", word: "digital", pos: "adj.", phonetic: "[`dɪdʒɪtəl]", meaning: "數位的", sentenceEn: "We live in a digital age where information is shared instantly.", sentenceZh: "(我們生活在一個資訊即時分享的數位時代。)" },
             { unit: "Unit 29 展覽", word: "strengthen", pos: "v.", phonetic: "[`strɛŋθən]", meaning: "加強；增強", sentenceEn: "Regular exercise helps strengthen your muscles and bones.", sentenceZh: "(規律運動有助於增強肌肉和骨骼。)" },
 
             // Unit 32 遊樂園
@@ -518,25 +586,49 @@
             { unit: "Unit 40 星座(三)", word: "reason", pos: "n.", phonetic: "[`rizn]", meaning: "原因；理由", sentenceEn: "Can you explain the reason for your absence?", sentenceZh: "(你能解釋你缺席的原因嗎？)" },
             { unit: "Unit 40 星座(三)", word: "admit", pos: "v.", phonetic: "[əd`mɪt]", meaning: "承認", sentenceEn: "He admitted that he had made a mistake.", sentenceZh: "(他承認自己犯了一個錯誤。)" },
 
-            // 其他補充單字 (日常實用與環境)
-            { unit: "其他補充單字 (日常實用與環境)", word: "supply", pos: "v.", phonetic: "[sə`plaɪ]", meaning: "供應；提供", sentenceEn: "The factory supplies safety masks and helmets to all of its workers.", sentenceZh: "(這間工廠提供所有的工人安全面罩和安全帽。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "entertainment", pos: "n.", phonetic: "[͵ɛntɚ`tɛnmənt]", meaning: "娛樂", sentenceEn: "The entertainment program for children must be educational and entertaining.", sentenceZh: "(孩童的娛樂節目必須要具教育性和娛樂性。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "present", pos: "v.", phonetic: "[prɪ`zɛnt]", meaning: "出示；呈現；提出", sentenceEn: "The employee presented his name card and got a discount on his meal.", sentenceZh: "(這位員工出示他的名片並獲得餐點折扣。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "respect", pos: "v.", phonetic: "[rɪ`spɛkt]", meaning: "尊重", sentenceEn: "Please respect my privacy and don't read my diary without permission.", sentenceZh: "(請尊重我的隱私且未經許可不要閱讀我的日記。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "aware", pos: "adj.", phonetic: "[ə`wɛr]", meaning: "注意到⋯⋯", sentenceEn: "Becky wasn't aware of the importance of studying until she failed the course.", sentenceZh: "(Becky 沒有注意到讀書的重要性直到她的課被當。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "personal", pos: "adj.", phonetic: "[`pɝsənəl]", meaning: "個人的；私人的", sentenceEn: "Nick shared his personal experience with us and helped us solve our problem.", sentenceZh: "(Nick 跟我們分享了他的個人經驗且幫助我們解決我們的問題。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "belongings", pos: "n.", phonetic: "[bɪ`lɔŋɪŋz]", meaning: "財物；所有物；財產", sentenceEn: "Check to see if you have taken all your belongings with you before getting off the bus.", sentenceZh: "(在下公車前請檢查你是否將你所有的財物都帶在身上。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "basic", pos: "adj.", phonetic: "[`besɪk]", meaning: "基本的；基礎的", sentenceEn: "Many universities require that students have basic English speaking ability before they graduate.", sentenceZh: "(許多大學要求學生在他們畢業前要有基本的英語口說能力。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "athlete", pos: "n.", phonetic: "[`æθlɪt]", meaning: "運動員；體育選手", sentenceEn: "Peter is the most outstanding athlete in the class. He has won many sports competitions.", sentenceZh: "(Peter 是班上最傑出的運動員。他贏了許多運動比賽。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "protect", pos: "v.", phonetic: "[prə`tɛkt]", meaning: "保護", sentenceEn: "We applied some sunscreen on our skin to protect it from the blazing sun.", sentenceZh: "(我們抹了一些防曬液在我們的皮膚上以不要被炙熱的太陽傷害。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "environment", pos: "n.", phonetic: "[ɪn`vaɪrənmənt]", meaning: "環境", sentenceEn: "My teacher always requires us to keep our learning environment clean and tidy.", sentenceZh: "(我的老師總是要求我們將學習環境保持乾淨又整潔。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "used", pos: "adj.", phonetic: "[juzd]", meaning: "二手的；用過的", sentenceEn: "The old bookstore in this alley sells used books and magazines.", sentenceZh: "(這條巷子裡的舊書店賣的是二手書及雜誌。)" },
-            { unit: "其他補充單字 (日常實用與環境)", word: "organic", pos: "adj.", phonetic: "[ɔr`gænɪk]", meaning: "有機的", sentenceEn: "Fruits and vegetables that are sold in organic stores are more expensive than those in traditional markets.", sentenceZh: "(有機店裡的水果及蔬菜比傳統市場賣的還貴。)" }
+            // 補充單字與 41~58 頁內容
+            { unit: "補充與 41~58 頁", word: "basic", pos: "adj.", phonetic: "[`besɪk]", meaning: "基本的；基礎的", sentenceEn: "Many universities require that students have basic English speaking ability before they graduate.", sentenceZh: "(許多大學要求學生在他們畢業前要有基本的英語口說能力。)" },
+            { unit: "補充與 41~58 頁", word: "athlete", pos: "n.", phonetic: "[`æθlɪt]", meaning: "運動員；體育選手", sentenceEn: "Peter is the most outstanding athlete in the class.", sentenceZh: "(Peter 是班上最傑出的運動員。)" },
+            { unit: "補充與 41~58 頁", word: "protect", pos: "v.", phonetic: "[prə`tɛkt]", meaning: "保護", sentenceEn: "We applied sunscreen to protect our skin.", sentenceZh: "(我們抹了防曬乳來保護皮膚。)" },
+            { unit: "補充與 41~58 頁", word: "environment", pos: "n.", phonetic: "[ɪn`vaɪrənmənt]", meaning: "環境", sentenceEn: "We should keep our environment clean.", sentenceZh: "(我們應該保持環境乾淨。)" },
+            { unit: "補充與 41~58 頁", word: "used", pos: "adj.", phonetic: "[juzd]", meaning: "二手的；用過的", sentenceEn: "The old bookstore sells used books.", sentenceZh: "(那間舊書店賣二手書。)" },
+            { unit: "補充與 41~58 頁", word: "organic", pos: "adj.", phonetic: "[ɔr`gænɪk]", meaning: "有機的", sentenceEn: "Organic vegetables are healthy.", sentenceZh: "(有機蔬菜很健康。)" },
+            { unit: "補充與 41~58 頁", word: "confident", pos: "adj.", phonetic: "[`kɑnfədənt]", meaning: "有信心的；有把握的", sentenceEn: "We are confident of winning the competition.", sentenceZh: "(我們對贏得比賽很有信心。)" },
+            { unit: "補充與 41~58 頁", word: "clear", pos: "adj.", phonetic: "[klɪr]", meaning: "清楚的；明確的", sentenceEn: "The coach's instructions were clear and easy to follow.", sentenceZh: "(教練的指示很清楚且很容易做到。)" },
+            { unit: "補充與 41~58 頁", word: "simple", pos: "adj.", phonetic: "[`sɪmpəl]", meaning: "簡單的；簡樸的", sentenceEn: "Cooking is not difficult; it is actually very simple.", sentenceZh: "(烹飪不難；事實上它非常簡單。)" },
+            { unit: "補充與 41~58 頁", word: "return", pos: "v.", phonetic: "[rɪ`tɝn]", meaning: "退回；歸還；返回", sentenceEn: "Remember to return the book on time.", sentenceZh: "(記得準時歸還書本。)" },
+            { unit: "補充與 41~58 頁", word: "refund", pos: "v.", phonetic: "[rɪ`fʌnd]", meaning: "退款；退還", sentenceEn: "The store wouldn't refund the money for the sweater.", sentenceZh: "(這間店不會退還毛衣的錢。)" },
+            { unit: "補充與 41~58 頁", word: "replace", pos: "v.", phonetic: "[rɪ`ples]", meaning: "替換；取代", sentenceEn: "Paper dictionaries have been replaced by online dictionaries.", sentenceZh: "(紙本字典已經被線上字典取代。)" },
+            { unit: "補充與 41~58 頁", word: "procedure", pos: "n.", phonetic: "[prə`sidʒɚ]", meaning: "程序；步驟；過程", sentenceEn: "Follow the procedure carefully.", sentenceZh: "(請仔細遵循程序。)" },
+            { unit: "補充與 41~58 頁", word: "apply", pos: "v.", phonetic: "[ə`plaɪ]", meaning: "申請；應用", sentenceEn: "You can apply for the job online.", sentenceZh: "(你可以線上申請這份工作。)" },
+            { unit: "補充與 41~58 頁", word: "complete", pos: "v.", phonetic: "[kəm`plit]", meaning: "完成；使完整", sentenceEn: "Please complete the form before submission.", sentenceZh: "(提交前請填寫完整表格。)" },
+            { unit: "補充與 41~58 頁", word: "form", pos: "n.", phonetic: "[fɔrm]", meaning: "表格；形式", sentenceEn: "Fill in this registration form.", sentenceZh: "(填寫這張註冊表格。)" },
+            { unit: "補充與 41~58 頁", word: "review", pos: "v.", phonetic: "[rɪ`vju]", meaning: "審核；複習", sentenceEn: "Let's review the lesson before the exam.", sentenceZh: "(考試前我們來複習功課吧。)" },
+            { unit: "補充與 41~58 頁", word: "send", pos: "v.", phonetic: "[sɛnd]", meaning: "寄；發送", sentenceEn: "Send the email to the manager.", sentenceZh: "(把電子郵件寄給經理。)" },
+            { unit: "補充與 41~58 頁", word: "proof", pos: "n.", phonetic: "[pruf]", meaning: "證明；證據", sentenceEn: "We need proof of purchase.", sentenceZh: "(我们需要購買證明。)" },
+            { unit: "補充與 41~58 頁", word: "responsible", pos: "adj.", phonetic: "[rɪ`spɑnsəbəl]", meaning: "負責的；可靠的", sentenceEn: "Everyone is responsible for protecting the environment.", sentenceZh: "(每個人都有責任保護環境。)" },
+            { unit: "補充與 41~58 頁", word: "shipping", pos: "n.", phonetic: "[`ʃɪpɪŋ]", meaning: "運送；運輸", sentenceEn: "Free shipping is available for orders over $500.", sentenceZh: "(消費滿五百元享有免運費。)" },
+            { unit: "補充與 41~58 頁", word: "charge", pos: "n.", phonetic: "[tʃɑrdʒ]", meaning: "費用", sentenceEn: "There is no extra charge for delivery.", sentenceZh: "(外送不收額外費用。)" },
+            { unit: "Unit 34 旅遊", word: "direct", pos: "adj.", phonetic: "[də`rɛkt]", meaning: "直接的", sentenceEn: "Jerry is a very direct person.", sentenceZh: "(Jerry 是一個很直接的人。)" },
+            { unit: "Unit 34 旅遊", word: "transfer", pos: "v.", phonetic: "[træns`fɝ]", meaning: "轉換；轉移", sentenceEn: "My friend wants to transfer to another school.", sentenceZh: "(我的朋友想轉學。)" },
+            { unit: "Unit 34 旅遊", word: "spend", pos: "v.", phonetic: "[spɛnd]", meaning: "花費", sentenceEn: "Hank should spend more time on his studies.", sentenceZh: "(Hank 應該花更多時間在課業上。)" },
+            { unit: "Unit 34 旅遊", word: "travel", pos: "v.", phonetic: "[`trævəl]", meaning: "旅行", sentenceEn: "My family is planning to travel around Taiwan.", sentenceZh: "(我的家人正計畫環遊臺灣。)" },
+            { unit: "Unit 34 旅遊", word: "budget", pos: "n.", phonetic: "[`bʌdʒɪt]", meaning: "預算", sentenceEn: "The price of the new car is within our budget.", sentenceZh: "(新車的價格在我們的預算之內。)" },
+            { unit: "Unit 34 旅遊", word: "cheap", pos: "adj.", phonetic: "[tʃip]", meaning: "便宜的", sentenceEn: "I bought a cheap watch at the night market.", sentenceZh: "(我在夜市買了一支便宜的手錶。)" },
+            { unit: "Unit 34 旅遊", word: "expensive", pos: "adj.", phonetic: "[ɪk`spɛnsɪv]", meaning: "昂貴的", sentenceEn: "The watch is too expensive for me.", sentenceZh: "(這支手錶對我來說太貴了。)" },
+            { unit: "Unit 34 旅遊", word: "perfect", pos: "adj.", phonetic: "[`pɝfɪkt]", meaning: "完美的", sentenceEn: "No one is perfect.", sentenceZh: "(人無完人。)" },
+            { unit: "Unit 34 旅遊", word: "half", pos: "adj.", phonetic: "[hæf]", meaning: "一半的", sentenceEn: "Lisa ate half of the cake.", sentenceZh: "(Lisa 吃了一半的蛋糕。)" },
+            { unit: "Unit 34 旅遊", word: "reach", pos: "v.", phonetic: "[ritʃ]", meaning: "抵達；到達", sentenceEn: "Danny reached the station in time.", sentenceZh: "(Danny 及時抵達車站。)" },
+            { unit: "Unit 34 旅遊", word: "destination", pos: "n.", phonetic: "[͵dɛstə`neʃən]", meaning: "目的地", sentenceEn: "The train arrived at the destination.", sentenceZh: "(火車抵達了目的地。)" },
+            { unit: "Unit 34 旅遊", word: "think", pos: "v.", phonetic: "[θɪŋk]", meaning: "認為；想", sentenceEn: "I think the clubs in our school are interesting.", sentenceZh: "(我認為我們學校的社團很有趣。)" },
+            { unit: "Unit 34 旅遊", word: "choice", pos: "n.", phonetic: "[tʃɔɪs]", meaning: "選擇", sentenceEn: "You always have choices in life.", sentenceZh: "(生活中你總是有選擇。)" },
+            { unit: "Unit 34 旅遊", word: "choose", pos: "v.", phonetic: "[tʃuz]", meaning: "選擇", sentenceEn: "Always choose what's best for you.", sentenceZh: "(總是選擇對你最好的。)" },
+            { unit: "Unit 34 旅遊", word: "extra", pos: "adj.", phonetic: "[`ɛkstrə]", meaning: "額外的", sentenceEn: "The teacher gave us extra homework.", sentenceZh: "(老師給我們額外的作業。)" }
         ];
 
         let currentIndex = 0;
         let isFlipped = false;
-        let favorites = JSON.parse(localStorage.getItem('vocab_favorites_all_v8') || '[]');
+        let favorites = JSON.parse(localStorage.getItem('vocab_favorites_all_v9') || '[]');
         let showFavoritesOnly = false;
         let selectedUnit = "all";
         let currentFilteredList = [...vocabList];
@@ -666,7 +758,7 @@
             } else {
                 favorites.push(item.word);
             }
-            localStorage.setItem('vocab_favorites_all_v8', JSON.stringify(favorites));
+            localStorage.setItem('vocab_favorites_all_v9', JSON.stringify(favorites));
             updateCard();
         }
 
@@ -686,6 +778,7 @@
             updateFilter();
         }
 
+        // 中英即時查詢功能 (支援輸入英文單字或中文含義來篩選)
         function handleSearch(query) {
             const q = query.toLowerCase().trim();
             if (!q) {
@@ -693,7 +786,11 @@
                 return;
             }
             currentFilteredList = vocabList.filter(item => 
-                item.word.toLowerCase().includes(q) || item.meaning.includes(q) || item.unit.includes(q)
+                item.word.toLowerCase().includes(q) || 
+                item.meaning.includes(q) || 
+                item.unit.toLowerCase().includes(q) ||
+                item.sentenceEn.toLowerCase().includes(q) ||
+                item.sentenceZh.includes(q)
             );
             currentIndex = 0;
             updateCard();
