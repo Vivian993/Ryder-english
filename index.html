@@ -49,6 +49,7 @@
 
         <div class="hidden md:flex items-center space-x-3">
             <span id="counter" class="text-base font-bold text-indigo-700 bg-indigo-50 px-3 py-1.5 rounded-2xl border border-indigo-200">1 / 0</span>
+            <button onclick="toggleCardMode()" id="card-mode-btn" class="text-sm px-3.5 py-1.5 bg-indigo-600 text-white rounded-2xl font-bold transition hover:bg-indigo-700 shadow-sm flex items-center gap-1">🔄 模式：中文正面</button>
             <button onclick="toggleFavoritesView()" id="fav-filter-btn" class="text-sm px-3.5 py-1.5 bg-amber-100 text-amber-800 rounded-2xl font-bold transition hover:bg-amber-200 shadow-sm">★ 收藏本</button>
             <button onclick="openSpellingModal()" class="text-sm px-3.5 py-1.5 bg-emerald-600 text-white rounded-2xl font-bold transition hover:bg-emerald-700 shadow-sm flex items-center gap-1">✏️ 拼字挑戰</button>
         </div>
@@ -58,15 +59,15 @@
     <main class="flex-1 max-w-lg w-full mx-auto p-5 flex flex-col justify-center items-center">
 
         <!-- 搜尋與快速操作列 -->
-        <div class="w-full mb-5 flex gap-3">
+        <div class="w-full mb-3 flex gap-2">
             <div class="relative flex-1">
-                <input type="text" id="search-input" placeholder="🔍 輸入英文單字或中文含義查詢..." oninput="handleSearch(this.value)" class="w-full px-5 py-3.5 bg-white border-2 border-indigo-100 rounded-2xl text-base font-medium shadow-sm focus:outline-none focus:border-indigo-500 transition">
+                <input type="text" id="search-input" placeholder="🔍 輸入英文單字或中文含義查詢..." oninput="handleSearch(this.value)" class="w-full px-4 py-3 bg-white border-2 border-indigo-100 rounded-2xl text-sm md:text-base font-medium shadow-sm focus:outline-none focus:border-indigo-500 transition">
             </div>
-            <button onclick="toggleAutoPlay()" id="autoplay-btn" class="bg-white border-2 border-indigo-100 text-indigo-700 px-4 py-3.5 rounded-2xl font-bold shadow-sm hover:bg-indigo-50 transition flex items-center gap-1 shrink-0" title="自動循環朗讀">
-                <span>▶ 循環</span>
+            <button onclick="toggleCardMode()" id="card-mode-btn-mob" class="md:hidden bg-indigo-600 text-white px-3 py-3 rounded-2xl font-bold text-xs shadow-sm flex items-center justify-center shrink-0">
+                🔄 換模式
             </button>
-            <button onclick="openSpellingModal()" class="md:hidden bg-emerald-600 text-white px-4 py-3.5 rounded-2xl font-bold shadow-sm transition flex items-center gap-1 shrink-0">
-                <span>✏️ 拼字</span>
+            <button onclick="toggleAutoPlay()" id="autoplay-btn" class="bg-white border-2 border-indigo-100 text-indigo-700 px-3 py-3 rounded-2xl font-bold text-xs md:text-sm shadow-sm hover:bg-indigo-50 transition flex items-center gap-1 shrink-0" title="自動循環朗讀">
+                <span>▶ 循環</span>
             </button>
         </div>
 
@@ -74,7 +75,7 @@
         <div class="w-full aspect-[4/4.8] perspective-1000 cursor-pointer select-none" onclick="flipCard()">
             <div id="flashcard" class="relative w-full h-full duration-500 transform-style-3d shadow-2xl rounded-3xl bg-white border-2 border-indigo-50">
                 
-                <!-- 正面：超大單字、詞性、音標與單元標籤 -->
+                <!-- 卡片正面 (動態切換：中文正面 或 英文正面) -->
                 <div class="absolute inset-0 backface-hidden p-8 flex flex-col justify-between bg-gradient-to-br from-white via-white to-indigo-50/50 rounded-3xl">
                     <div class="flex justify-between items-center">
                         <span id="card-unit" class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-xl border border-indigo-100">Unit 8 線上購物</span>
@@ -83,34 +84,41 @@
                             <button onclick="event.stopPropagation(); toggleFavorite();" id="fav-btn" class="text-3xl text-slate-300 hover:text-amber-400 transition p-1">★</button>
                         </div>
                     </div>
+                    
                     <div class="text-center my-auto">
-                        <!-- 直接點擊生字或旁邊的喇叭立即發音 -->
-                        <div onclick="event.stopPropagation(); speakCurrentWord();" class="inline-flex items-center justify-center gap-3 group cursor-pointer p-3 rounded-2xl hover:bg-indigo-50/80 transition">
-                            <h2 id="card-word" class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight drop-shadow-sm group-hover:text-indigo-600 transition">collect</h2>
-                            <span class="text-2xl text-indigo-500 bg-indigo-100/80 p-2.5 rounded-2xl shadow-xs group-hover:scale-110 transition">🔊</span>
+                        <!-- 點擊文字或聲音圖示即可聽英文發音 -->
+                        <div onclick="event.stopPropagation(); speakCurrentWord();" class="inline-flex flex-col items-center justify-center gap-2 group cursor-pointer p-3 rounded-2xl hover:bg-indigo-50/80 transition">
+                            <h2 id="front-main-text" class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight drop-shadow-sm group-hover:text-indigo-600 transition">收集；聚集</h2>
+                            <p id="front-sub-text" class="text-indigo-600 font-mono text-lg font-bold mt-1"></p>
+                            <span class="text-xs font-bold text-indigo-600 bg-indigo-100/80 px-3 py-1.5 rounded-xl shadow-xs group-hover:scale-105 transition flex items-center gap-1 mt-2">
+                                🔊 聽英文發音
+                            </span>
                         </div>
-                        <p id="card-phonetic" class="text-indigo-600 font-mono text-lg font-bold mt-2">[kə`lɛkt]</p>
-                        <div class="mt-6 inline-flex items-center space-x-2 text-xs text-indigo-500 font-semibold bg-indigo-50/80 px-4 py-2 rounded-2xl shadow-xs border border-indigo-100">
-                            <span>👆 點擊單字或喇叭聽發音 ｜ 空白處翻背面</span>
+                        <div class="mt-4 inline-flex items-center space-x-2 text-xs text-indigo-500 font-semibold bg-indigo-50/80 px-4 py-2 rounded-2xl shadow-xs border border-indigo-100">
+                            <span id="front-hint-text">💡 點擊卡片翻面看英文單字與拼法</span>
                         </div>
                     </div>
-                    <div class="text-center text-xs font-semibold text-slate-400">
-                        正面 (點擊卡片其他地方看中文與例句)
+                    
+                    <div id="front-footer-tag" class="text-center text-xs font-semibold text-slate-400">
+                        正面 (中文模式)
                     </div>
                 </div>
 
-                <!-- 背面：超大中文意義與完整例句 -->
+                <!-- 卡片背面 (動態切換：對應英文或中文解析) -->
                 <div class="absolute inset-0 backface-hidden rotate-y-180 p-8 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl overflow-y-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xs font-bold text-indigo-300 uppercase tracking-wider">中文釋義與例句解析</span>
-                        <span class="text-xs font-medium text-indigo-300/70">點擊例句可聽朗讀</span>
+                        <span id="back-header-tag" class="text-xs font-bold text-indigo-300 uppercase tracking-wider">背面詳細內容</span>
+                        <span id="back-sub-phonetic" class="text-emerald-400 font-mono text-base font-bold">[kə`lɛkt]</span>
                     </div>
+
                     <div class="my-auto space-y-4">
-                        <div>
-                            <h3 id="card-meaning" class="text-2xl md:text-3xl font-black text-emerald-400 tracking-tight mb-2">收集；聚集</h3>
+                        <div onclick="event.stopPropagation(); speakCurrentWord();" class="cursor-pointer group flex items-center justify-center gap-3">
+                            <h3 id="back-main-text" class="text-3xl md:text-4xl font-black text-emerald-400 tracking-tight group-hover:text-emerald-300 transition">collect</h3>
+                            <span class="text-2xl text-emerald-400">🔊</span>
                         </div>
+                        
                         <!-- 點擊例句區塊或喇叭即可朗讀例句 -->
-                        <div onclick="event.stopPropagation(); speakSentence();" class="bg-white/10 p-4 rounded-2xl backdrop-blur-md border border-white/15 shadow-inner cursor-pointer hover:bg-white/15 transition group">
+                        <div onclick="event.stopPropagation(); speakSentence();" class="bg-white/10 p-4 rounded-2xl backdrop-blur-md border border-white/15 shadow-inner cursor-pointer hover:bg-white/15 transition group mt-3">
                             <div class="flex items-start justify-between gap-3">
                                 <p id="card-sentence-en" class="text-sm md:text-base font-semibold text-slate-100 mb-2 leading-relaxed group-hover:text-emerald-300 transition">Jeff has the habit of collecting Japanese comic books.</p>
                                 <span class="text-xl shrink-0">🔊</span>
@@ -118,7 +126,8 @@
                             <p id="card-sentence-zh" class="text-xs md:text-sm font-medium text-indigo-200 leading-relaxed">(Jeff 有收集日本漫畫書的習慣。)</p>
                         </div>
                     </div>
-                    <div class="text-center text-xs font-semibold text-indigo-300/80">
+
+                    <div id="back-footer-tag" class="text-center text-xs font-semibold text-indigo-300/80">
                         背面 (點擊任意處翻回正面)
                     </div>
                 </div>
@@ -634,12 +643,12 @@
         let currentFilteredList = [...vocabList];
         let autoPlayTimer = null;
         let isAutoPlaying = false;
+        
+        // 模式控制："zh" 代表中文正面 / "en" 代表英文正面
+        let cardMode = localStorage.getItem('vocab_card_mode') || "zh";
 
         const flashcard = document.getElementById('flashcard');
-        const wordEl = document.getElementById('card-word');
         const posEl = document.getElementById('card-pos');
-        const phoneticEl = document.getElementById('card-phonetic');
-        const meaningEl = document.getElementById('card-meaning');
         const sentenceEnEl = document.getElementById('card-sentence-en');
         const sentenceZhEl = document.getElementById('card-sentence-zh');
         const unitEl = document.getElementById('card-unit');
@@ -650,6 +659,35 @@
         const favFilterMobBtn = document.getElementById('fav-filter-btn-mob');
         const autoplayBtn = document.getElementById('autoplay-btn');
         const unitSelect = document.getElementById('unit-select');
+
+        // 正背面動態 DOM 元素
+        const frontMainText = document.getElementById('front-main-text');
+        const frontSubText = document.getElementById('front-sub-text');
+        const frontHintText = document.getElementById('front-hint-text');
+        const frontFooterTag = document.getElementById('front-footer-tag');
+        const backHeaderTag = document.getElementById('back-header-tag');
+        const backSubPhonetic = document.getElementById('back-sub-phonetic');
+        const backMainText = document.getElementById('back-main-text');
+        const backFooterTag = document.getElementById('back-footer-tag');
+        const cardModeBtn = document.getElementById('card-mode-btn');
+        const cardModeBtnMob = document.getElementById('card-mode-btn-mob');
+
+        function toggleCardMode() {
+            cardMode = cardMode === "zh" ? "en" : "zh";
+            localStorage.setItem('vocab_card_mode', cardMode);
+            updateCardModeUI();
+            updateCard();
+        }
+
+        function updateCardModeUI() {
+            if (cardMode === "zh") {
+                cardModeBtn.innerText = "🔄 模式：中文正面";
+                cardModeBtnMob.innerText = "🔄 中文正面";
+            } else {
+                cardModeBtn.innerText = "🔄 模式：英文正面";
+                cardModeBtnMob.innerText = "🔄 英文正面";
+            }
+        }
 
         // 初始化單元選單
         function initUnitSelect() {
@@ -683,10 +721,11 @@
 
         function updateCard() {
             if (currentFilteredList.length === 0) {
-                wordEl.innerText = "沒有單字";
+                frontMainText.innerText = "沒有單字";
+                frontSubText.innerText = "";
+                backMainText.innerText = "此分類目前沒有單字";
                 posEl.innerText = "-";
-                phoneticEl.innerText = "";
-                meaningEl.innerText = "此分類目前沒有單字";
+                backSubPhonetic.innerText = "";
                 sentenceEnEl.innerText = "";
                 sentenceZhEl.innerText = "";
                 unitEl.innerText = "-";
@@ -699,15 +738,36 @@
             if (currentIndex < 0) currentIndex = currentFilteredList.length - 1;
 
             const item = currentFilteredList[currentIndex];
-            wordEl.innerText = item.word;
             posEl.innerText = item.pos;
-            phoneticEl.innerText = item.phonetic;
-            meaningEl.innerText = item.meaning;
             sentenceEnEl.innerText = item.sentenceEn;
             sentenceZhEl.innerText = item.sentenceZh;
             unitEl.innerText = item.unit;
             counterEl.innerText = `${currentIndex + 1} / ${currentFilteredList.length}`;
             counterMobEl.innerText = `${currentIndex + 1} / ${currentFilteredList.length}`;
+
+            if (cardMode === "zh") {
+                // 中文正面，翻牌看英文
+                frontMainText.innerText = item.meaning;
+                frontSubText.innerText = "";
+                frontHintText.innerText = "💡 點擊卡片翻面看英文單字與拼法";
+                frontFooterTag.innerText = "正面 (中文模式 ｜ 點擊翻看英文)";
+
+                backHeaderTag.innerText = "英文單字與例句";
+                backSubPhonetic.innerText = item.phonetic;
+                backMainText.innerText = item.word;
+                backFooterTag.innerText = "背面 (點擊任意處翻回正面中文)";
+            } else {
+                // 英文正面，翻牌看中文
+                frontMainText.innerText = item.word;
+                frontSubText.innerText = item.phonetic;
+                frontHintText.innerText = "💡 點擊單字聽發音 ｜ 空白處翻面看中文釋義";
+                frontFooterTag.innerText = "正面 (英文模式 ｜ 點擊翻看中文)";
+
+                backHeaderTag.innerText = "中文釋義與例句解析";
+                backSubPhonetic.innerText = item.phonetic;
+                backMainText.innerText = item.meaning;
+                backFooterTag.innerText = "背面 (點擊任意處翻回正面英文)";
+            }
 
             if (favorites.includes(item.word)) {
                 favBtn.innerText = "★";
@@ -898,6 +958,7 @@
 
         window.onload = function() {
             initUnitSelect();
+            updateCardModeUI();
             updateCard();
         };
     </script>
